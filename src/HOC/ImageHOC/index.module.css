@@ -1,0 +1,5 @@
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1;
+}

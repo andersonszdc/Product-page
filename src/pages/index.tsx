@@ -1,25 +1,46 @@
 import Image from "next/image";
-import "../styles/index.module.css";
+import ImageHOC from "../HOC/ImageHOC";
+import styles from "../styles/index.module.css";
 
 export default function Index() {
   return (
-    <main>
-      <section className="images">
-        <Image className="images_main" src="" alt="sneakers" />
-        <div className="previews">
-          <Image className="previews_item" src="" alt="sneakers" />
-          <Image className="previews_item" src="" alt="sneakers" />
-          <Image className="previews_item" src="" alt="sneakers" />
-          <Image className="previews_item" src="" alt="sneakers" />
+    <main className={styles.container}>
+      <section className={styles.images}>
+        <ImageHOC
+          classWrapper={styles.images_main}
+          src="/image-product-1.jpg"
+          alt="sneakers"
+        />
+        <div className={styles.previews}>
+          <ImageHOC
+            classWrapper={styles.previews_item}
+            src="/image-product-1-thumbnail.jpg"
+            alt="sneakers"
+          />
+          <ImageHOC
+            classWrapper={styles.previews_item}
+            src="/image-product-2-thumbnail.jpg"
+            alt="sneakers"
+          />
+          <ImageHOC
+            classWrapper={styles.previews_item}
+            src="/image-product-3-thumbnail.jpg"
+            alt="sneakers"
+          />
+          <ImageHOC
+            classWrapper={styles.previews_item}
+            src="/image-product-4-thumbnail.jpg"
+            alt="sneakers"
+          />
         </div>
       </section>
-      <section className="info}">
+      <section className="info">
         <h2 className="collection">sneaker company</h2>
         <h1 className="name">fall limited edition sneakers</h1>
         <p className="description">
           these low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole. They'll withstand everything
-          the weather can offer.
+          Featuring a durable rubber outer sole. They&apos;ll withstand
+          everything the weather can offer.
         </p>
         <div className="price">
           <span className="price_value">$125.00</span>
@@ -33,7 +54,13 @@ export default function Index() {
             <button className="amount_increase">+</button>
           </div>
           <button className="action_btn">
-            <Image className="btn_icon" src="#" alt="cart icon" />
+            <Image
+              className="btn_icon"
+              width="24"
+              height="24"
+              src="/icon-cart.svg"
+              alt="cart icon"
+            />
             <span className="btn_text">Add to cart</span>
           </button>
         </div>

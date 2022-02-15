@@ -34,34 +34,34 @@ export default function Index() {
           />
         </div>
       </section>
-      <section className="info">
-        <h2 className="collection">sneaker company</h2>
-        <h1 className="name">fall limited edition sneakers</h1>
-        <p className="description">
-          these low-profile sneakers are your perfect casual wear companion.
+      <section className={styles.info}>
+        <h2 className={styles.collection}>sneaker company</h2>
+        <h1 className={styles.name}>fall limited edition sneakers</h1>
+        <p className={styles.description}>
+          These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole. They&apos;ll withstand
           everything the weather can offer.
         </p>
-        <div className="price">
-          <span className="price_value">$125.00</span>
-          <span className="price_discount">50%</span>
+        <div className={styles.price}>
+          <span className={styles.price_value}>$125.00</span>
+          <span className={styles.price_discount}>50%</span>
         </div>
-        <span className="old_price">$250.00</span>
-        <div className="action">
-          <div className="amount">
-            <button className="amount_decrease">-</button>
-            <span className="amount_value">0</span>
-            <button className="amount_increase">+</button>
+        <span className={styles.old_price}>$250.00</span>
+        <div className={styles.action}>
+          <div className={styles.amount}>
+            <button className={styles.amount_decrease}>-</button>
+            <span className={styles.amount_value}>0</span>
+            <button className={styles.amount_increase}>+</button>
           </div>
-          <button className="action_btn">
+          <button className={styles.action_btn}>
             <Image
-              className="btn_icon"
+              className={styles.btn_icon}
               width="24"
               height="24"
               src="/icon-cart.svg"
               alt="cart icon"
             />
-            <span className="btn_text">Add to cart</span>
+            <span className={styles.btn_text}>Add to cart</span>
           </button>
         </div>
       </section>

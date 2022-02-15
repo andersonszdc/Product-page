@@ -9,8 +9,8 @@ type ImageHOCProps = ImageProps & {
 
 const ImageHOC: React.FC<ImageHOCProps> = ({ classWrapper, ...props }) => {
   return (
-    <div className={classWrapper + ' ' + styles.wrapper}>
-      <Image layout="fill" {...props} objectFit="cover" />
+    <div className={classWrapper + " " + styles.wrapper}>
+      <Image layout="fill" objectFit="cover" {...props} />
     </div>
   );
 };

@@ -1,36 +1,48 @@
+import { useState } from "react";
 import ImageHOC from "../HOC/ImageHOC";
 import styles from "../styles/index.module.css";
 
+const images = [
+  { id: "/image-product-1.jpg", src: "/image-product-1-thumbnail.jpg" },
+  { id: "/image-product-2.jpg", src: "/image-product-2-thumbnail.jpg" },
+  { id: "/image-product-3.jpg", src: "/image-product-3-thumbnail.jpg" },
+  { id: "/image-product-4.jpg", src: "/image-product-4-thumbnail.jpg" },
+];
+
 export default function Index() {
+  const [amount, setAmount] = useState(0);
+  const [imgSelected, setImgSelected] = useState("/image-product-1.jpg");
+
+  const handlePreview = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+    const { id } = e.target as HTMLImageElement;
+    setImgSelected(id);
+
+    document.getElementById(id).classList.add("oi");
+  };
+
   return (
     <main className={styles.container}>
       <section className={styles.images}>
         <ImageHOC
           classWrapper={styles.images_main}
-          src="/image-product-1.jpg"
+          src={imgSelected}
           alt="sneakers"
         />
         <div className={styles.previews}>
-          <ImageHOC
-            classWrapper={styles.previews_item}
-            src="/image-product-1-thumbnail.jpg"
-            alt="sneakers"
-          />
-          <ImageHOC
-            classWrapper={styles.previews_item}
-            src="/image-product-2-thumbnail.jpg"
-            alt="sneakers"
-          />
-          <ImageHOC
-            classWrapper={styles.previews_item}
-            src="/image-product-3-thumbnail.jpg"
-            alt="sneakers"
-          />
-          <ImageHOC
-            classWrapper={styles.previews_item}
-            src="/image-product-4-thumbnail.jpg"
-            alt="sneakers"
-          />
+          {images.map((image, index) => {
+            const className =
+              imgSelected === image.id && styles.previews_item_active;
+            return (
+              <ImageHOC
+                key={index}
+                id={image.id}
+                classWrapper={styles.previews_item + " " + className}
+                onClick={handlePreview}
+                src={image.src}
+                alt="sneakers"
+              />
+            );
+          })}
         </div>
       </section>
       <section className={styles.info}>
@@ -48,9 +60,19 @@ export default function Index() {
         <span className={styles.old_price}>$250.00</span>
         <div className={styles.action}>
           <div className={styles.amount}>
-            <button className={styles.amount_decrease}>-</button>
-            <span className={styles.amount_value}>0</span>
-            <button className={styles.amount_increase}>+</button>
+            <button
+              className={styles.amount_decrease}
+              onClick={() => setAmount((s) => (s -= 1))}
+            >
+              -
+            </button>
+            <span className={styles.amount_value}>{amount}</span>
+            <button
+              className={styles.amount_increase}
+              onClick={() => setAmount((s) => (s += 1))}
+            >
+              +
+            </button>
           </div>
           <button className={styles.action_btn}>
             <svg

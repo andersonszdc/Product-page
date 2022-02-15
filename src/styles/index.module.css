@@ -3,6 +3,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
+  margin: 0 auto;
+  padding: 5%;
 }
 
 .images {
@@ -22,8 +24,17 @@
 }
 
 .previews_item {
-  border-radius: 18px;
+  border-radius: 12px;
   width: 25%;
+  cursor: pointer;
+}
+
+.previews_item_active {
+  border: 2px solid var(--clr-orange);
+}
+
+.previews_item_active img {
+  opacity: 0.25;
 }
 
 .collection {
@@ -33,7 +44,7 @@
 }
 
 .name {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
   font-size: 2rem;
   text-transform: capitalize;
@@ -47,7 +58,7 @@
 
 .price {
   margin-top: 1rem;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
   display: flex;
   align-items: center;
   gap: 24px;

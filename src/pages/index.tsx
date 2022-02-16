@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navbar from "../components/navbar";
 import ImageHOC from "../HOC/ImageHOC";
 import styles from "../styles/index.module.css";
 
@@ -94,3 +95,5 @@ export default function Index() {
     </main>
   );
 }
+
+Index.layout = Navbar;

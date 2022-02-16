@@ -4,7 +4,7 @@ import Image, { ImageProps } from "next/image";
 import styles from "./index.module.css";
 
 type ImageHOCProps = ImageProps & {
-  classWrapper: string;
+  classWrapper?: string;
 };
 
 const ImageHOC: React.FC<ImageHOCProps> = ({ classWrapper, ...props }) => {
